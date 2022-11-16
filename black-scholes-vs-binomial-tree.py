@@ -1,10 +1,3 @@
-'''
-Induction: 
-The purpose of this project is to use a binomial tree more realistically than what was done for the earlier homework
-assignment. That is to make a tree with many more nodes and to notice the improvements to the error that result
-from more nodes.
-'''
-
 import numpy as np
 from scipy.stats import norm
 
@@ -20,10 +13,10 @@ N: int # number of time steps
 # --------------------------------------------------------------
 phi = norm.cdf
 
-def call_option(S0: float, K: float, r: float, sigma:float, T:float):
-    d1 = (np.log(S0/K) + (r + (sigma**2)/2)*T)/sigma*np.sqrt(T)
-    d2 = d1 - sigma*np.sqrt(T)
-    return S0 * phi(d1) - K * np.exp(-r * T) * phi(d2)
+def call_option(S0, K, r, sigma, T):
+    d1 = (np.log(S0/K) + (r + (sigma**2)/2)*T)/(sigma*np.sqrt(T)) # Provided by assignment
+    d2 = d1 - sigma*np.sqrt(T) # Provided by assignment
+    return S0 * phi(d1) - K * np.exp(-r * T) * phi(d2) # C = this
 
 
 
