@@ -20,7 +20,7 @@ def call_option(S0, K, r, sigma, T):
 
 
 
-# Binomail Model
+# Binomial Model
 # --------------
 def binomial_tree(S0, K, r, sigma, T, N) -> float:
     delta_t = T/N # how long each interval is
@@ -53,4 +53,4 @@ if __name__ == "__main__":
     for i in n:
         print(f'N = {i}: {binomial_tree(S0, K, r, sigma, T, i)}')
 
-    print(call_option(S0, K, r, sigma, T))
+    print(f'Black-Scholes = {call_option(S0, K, r, sigma, T)}')
